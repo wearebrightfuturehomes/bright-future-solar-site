@@ -10,8 +10,8 @@
   --line: rgba(16, 24, 32, 0.08);
   --green: #d7ff57;
   --green-deep: #c3ef2d;
-  --gold: #c9a84c;
-  --gold-soft: rgba(201,168,76,0.18);
+  --gold: #DCA54A;
+  --gold-soft: rgba(220,165,74,0.18);
   --radius: 1.5rem;
   --radius-lg: 2.2rem;
   --shadow: 0 28px 70px rgba(12, 18, 26, 0.08);
@@ -55,13 +55,13 @@ p { color: var(--muted); line-height: 1.8; font-size: clamp(1rem, 1.3vw, 1.06rem
 .eco-hero-frame { background: linear-gradient(90deg, #040809 0%, #071012 30%, #0b2327 100%); border-radius: 2.2rem; min-height: 41rem; position: relative; overflow: visible; padding: 5rem 3rem 7rem; }
 .eco-hero-frame::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 9%); opacity: 0.18; }
 .eco-hero-panel { position: relative; z-index: 1; max-width: 44rem; }
-.eco-hero-inner-card { border: 1px solid rgba(201,168,76,0.45); border-radius: 1.2rem; padding: 2.2rem; color: #fff; background: rgba(0,0,0,0.12); }
+.eco-hero-inner-card { border: 1px solid rgba(220,165,74,0.45); border-radius: 1.2rem; padding: 2.2rem; color: #fff; background: rgba(0,0,0,0.12); }
 .eco-hero-inner-card h1 { font-family: 'Outfit', sans-serif; font-size: clamp(3.2rem, 6vw, 5.4rem); line-height: 0.96; letter-spacing: -0.05em; max-width: 11ch; }
 .eco-hero-inner-card p { color: rgba(255,255,255,0.76); max-width: 38rem; }
 .hero-welcome { display: inline-flex; margin-bottom: 1rem; color: #e9d9a4; font-size: 0.92rem; }
 .hero-actions-left { justify-content: flex-start; }
-.gold-outline { border-color: rgba(201,168,76,0.55); color: #f5df94; background: transparent; }
-.gold-outline:hover { background: rgba(201,168,76,0.08); }
+.gold-outline { border-color: rgba(220,165,74,0.55); color: #f5df94; background: transparent; }
+.gold-outline:hover { background: rgba(220,165,74,0.08); }
 .eco-hero-stats-row { position: absolute; right: 2rem; bottom: -2rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; width: min(34rem, 50%); z-index: 2; }
 .eco-stat-box { background: #0b3132; color: #fff; border-radius: 1.4rem; padding: 1.5rem; text-align: center; border: 6px solid #fff; }
 .eco-stat-box strong { display: block; font-size: 2.6rem; font-family: 'Outfit', sans-serif; }
