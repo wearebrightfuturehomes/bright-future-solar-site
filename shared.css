@@ -408,3 +408,24 @@ p { color: var(--muted); line-height: 1.8; font-size: clamp(1rem, 1.4vw, 1.08rem
   .hero-kicker { font-size: 2.2rem; }
   .feature-card-grid { grid-template-columns: 1fr; }
 }
+.hero-support { max-width: 34rem; color: rgba(255,255,255,0.76); margin-bottom: 1rem; }
+.dark-heading { color: #111; font-family: 'Outfit', sans-serif; font-size: clamp(2.2rem, 4vw, 3.8rem); }
+.services-mosaic {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem;
+}
+.mosaic-card {
+  background: #14161c; color: #fff; border-radius: 1.4rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.06);
+}
+.mosaic-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.mosaic-card div { padding: 1.15rem; }
+.mosaic-card h3 { font-family: 'Outfit', sans-serif; color: #fff; font-size: 1.2rem; }
+.mosaic-card p { color: rgba(255,255,255,0.68); }
+.testimonial-quote-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.quote-card {
+  background: #f8f8f8; border: 1px solid rgba(0,0,0,0.06); border-radius: 1.25rem; padding: 1.4rem;
+}
+.quote-card strong { display: block; margin-bottom: 0.8rem; color: #141414; }
+.quote-card p { color: #6f7280; }
+@media (max-width: 980px) {
+  .services-mosaic, .testimonial-quote-grid { grid-template-columns: 1fr; }
+}
