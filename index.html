@@ -1,207 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bright Future | Education, Innovation, and Development</title>
+  <title>Bright Future Solar | Renewable Energy Solutions</title>
   <meta name="description" content="Bright Future Solar provides sustainable and affordable solar energy solutions for homes and businesses." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#DCA54A',
+            ink: '#0A0F14',
+            panel: '#101820',
+            soft: '#F7F3EA',
+            muted: '#6B7280'
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['Outfit', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 25px 60px rgba(15, 23, 42, 0.12)',
+            glow: '0 0 0 1px rgba(220,165,74,0.15), 0 20px 45px rgba(220,165,74,0.14)'
+          },
+          keyframes: {
+            floaty: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-10px)' } },
+            fadeUp: { '0%': { opacity: '0', transform: 'translateY(32px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            pulseSoft: { '0%,100%': { opacity: '1' }, '50%': { opacity: '.6' } }
+          },
+          animation: {
+            floaty: 'floaty 5s ease-in-out infinite',
+            pulseSoft: 'pulseSoft 2.2s ease-in-out infinite'
+          }
+        }
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-  <header class="site-header" id="siteHeader">
-    <nav class="navbar container eco-nav">
-      <a href="index.html" class="brand-mark eco-brand">Bright Future</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-      <div class="nav-center" id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="aboutUs.html">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+<body class="bg-soft text-slate-900 font-body overflow-x-hidden">
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <div class="rounded-full border border-white/50 bg-white/80 backdrop-blur-xl shadow-soft px-5 py-3 flex items-center justify-between gap-4">
+        <a href="index.html" class="text-sm sm:text-base font-extrabold uppercase tracking-[0.25em] text-ink">Bright Future</a>
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-8 text-sm text-slate-600">
+          <a href="#home" class="hover:text-ink transition">Home</a>
+          <a href="#about" class="hover:text-ink transition">About</a>
+          <a href="#services" class="hover:text-ink transition">Services</a>
+          <a href="#projects" class="hover:text-ink transition">Projects</a>
+          <a href="#contact" class="hover:text-ink transition">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="#lead-capture" class="hidden sm:inline-flex items-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-ink shadow-glow hover:-translate-y-0.5 transition">Request a Quote</a>
+          <button id="navToggle" class="lg:hidden inline-flex items-center justify-center rounded-full border border-slate-200 p-3 text-slate-700">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
       </div>
-      <a href="#lead-capture" class="btn btn-primary eco-cta">Request a Quote</a>
-    </nav>
+      <div id="mobileNav" class="hidden lg:hidden mt-3 rounded-3xl border border-white/60 bg-white/90 backdrop-blur-xl shadow-soft p-4 space-y-3 text-sm text-slate-700">
+        <a href="#home" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#services" class="block">Services</a>
+        <a href="#projects" class="block">Projects</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="#lead-capture" class="inline-flex w-full items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-ink">Request a Quote</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="eco-hero section">
-      <div class="container eco-hero-shell reveal fade-up">
-        <div class="eco-hero-frame">
-          <div class="eco-hero-panel">
-            <div class="eco-hero-inner-card">
-              <span class="hero-welcome">Welcome to Bright Future</span>
-              <h1>Brighten Your Home with Solar Energy</h1>
-              <p>Sustainable power solutions by Bright Future, committed to clean energy and innovation. Experience premium solar guidance, installation, and savings support from start to finish.</p>
-              <div class="hero-actions hero-actions-left">
-                <a href="#lead-capture" class="btn btn-primary">Get Free Consultation</a>
-                <a href="#services" class="btn btn-outline gold-outline">Explore Services ↗</a>
+  <main class="pt-28" id="home">
+    <section class="relative px-4 sm:px-6 lg:px-8">
+      <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(220,165,74,.18),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,.08),transparent_24%)]"></div>
+      <div class="max-w-7xl mx-auto rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-ink shadow-soft border border-white/10">
+        <div class="grid lg:grid-cols-[1.1fr_.9fr] min-h-[780px]">
+          <div class="relative p-6 sm:p-8 lg:p-12 flex flex-col justify-between bg-[linear-gradient(135deg,#081015_0%,#0B1820_50%,#0E242A_100%)]">
+            <div class="absolute inset-0 opacity-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
+            <div class="relative z-10">
+              <span class="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-brand"><span class="h-2 w-2 rounded-full bg-brand animate-pulseSoft"></span> Renewable Energy Solutions</span>
+              <div class="mt-10 max-w-3xl rounded-[1.75rem] border border-brand/40 bg-black/10 p-6 sm:p-8 lg:p-10 shadow-glow">
+                <p class="text-sm uppercase tracking-[0.3em] text-brand/80 mb-4">Welcome to Bright Future</p>
+                <h1 class="font-display text-white text-5xl sm:text-6xl lg:text-7xl leading-[0.92]">Brighten Your Home with Solar Energy</h1>
+                <p class="mt-6 max-w-2xl text-base sm:text-lg text-slate-300">Sustainable power solutions by Bright Future, committed to clean energy and innovation. We help homeowners and businesses lower energy costs, increase property value, and move into a cleaner future.</p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                  <a href="#lead-capture" class="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-ink hover:-translate-y-0.5 transition">Get Free Consultation</a>
+                  <a href="#services" class="inline-flex items-center justify-center rounded-full border border-brand/50 px-6 py-3.5 text-sm font-semibold text-brand hover:bg-brand/10 transition">Explore Services</a>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:mt-0 lg:max-w-xl lg:ml-auto w-full">
+              <div class="rounded-[1.5rem] border-4 border-white bg-teal-900/90 p-5 text-white shadow-soft">
+                <p class="text-4xl font-extrabold">30%</p>
+                <p class="mt-2 text-sm text-slate-200">Federal Tax Credits</p>
+              </div>
+              <div class="rounded-[1.5rem] border-4 border-white bg-teal-900/90 p-5 text-white shadow-soft">
+                <p class="text-4xl font-extrabold">1 Min</p>
+                <p class="mt-2 text-sm text-slate-200">Free Estimate Form</p>
               </div>
             </div>
           </div>
-          <div class="eco-hero-stats-row">
-            <article class="eco-stat-box"><strong>30%</strong><span>Federal Tax Credits</span></article>
-            <article class="eco-stat-box"><strong>1 min</strong><span>Free Estimate Form</span></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section eco-partners">
-      <div class="container reveal fade-up">
-        <div class="partner-strip">
-          <span>QUALITY AND INNOVATION</span>
-          <span>ENVIRONMENTAL IMPACT</span>
-          <span>EXPERT GUIDANCE</span>
-          <span>CUSTOMIZED SOLUTIONS</span>
-          <span>MAXIMIZING YOUR INVESTMENT</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section eco-about">
-      <div class="container eco-about-wrapper reveal fade-up">
-        <div class="eco-about-grid">
-          <div class="eco-about-images reveal slide-left">
-            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80" alt="Discover Bright Future solar panel installation process" class="about-main-image" />
-            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=700&q=80" alt="Why choose solar energy with Bright Future" class="about-floating-image" />
-          </div>
-          <div class="eco-about-copy reveal fade-up">
-            <span class="section-tag eco-tag">Why Choose Solar Energy with Bright Future?</span>
-            <h2>Choose Bright Future for reliable, high-quality solar solutions.</h2>
-            <p>Our focus on sustainability, top-tier service, and tailored energy plans makes us your trusted partner in the transition to clean, renewable power.</p>
-            <div class="eco-feature-list">
-              <article><strong>Quality and Innovation</strong><p>Bright Future uses cutting-edge solar technology and premium materials to guarantee efficient and long-lasting energy solutions.</p></article>
-              <article><strong>Environmental Impact</strong><p>Our mission promotes sustainability by helping clients reduce their carbon footprint and contribute to a cleaner, greener planet.</p></article>
-              <article><strong>Expert Guidance</strong><p>From consultation through installation, Bright Future provides professional guidance every step of the way.</p></article>
-              <article><strong>Customized Solutions</strong><p>Each property is unique, so we design custom solar systems to maximize output, optimize savings, and support long-term performance.</p></article>
-              <article><strong>Maximizing Your Solar Investment</strong><p>We help maximize your investment through tax credits, rebates, and financing options that make solar more affordable.</p></article>
+          <div class="relative min-h-[420px] lg:min-h-full">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80" alt="Bright Future Solar installation" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 rounded-[1.5rem] bg-white/90 backdrop-blur-md p-5 shadow-soft animate-floaty">
+              <div class="flex items-start gap-4">
+                <div class="rounded-2xl bg-brand/15 p-3 text-brand"><i data-lucide="sun-medium" class="w-6 h-6"></i></div>
+                <div>
+                  <h2 class="font-display text-2xl text-slate-900">Clean energy. Lower bills. Smarter future.</h2>
+                  <p class="mt-2 text-sm text-slate-600">Premium solar planning, expert installation, and financing guidance designed to maximize your long-term savings.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section lead-capture" id="lead-capture">
-      <div class="container eco-form-shell reveal scale-in">
-        <div class="eco-form-copy">
-          <span class="section-tag eco-tag">Ready to Go Solar?</span>
-          <h2>You’ve seen the benefits, now take the first step.</h2>
-          <p>Our team will build a custom solar plan tailored to your home and budget so you can move forward with confidence and clarity.</p>
-          <ul class="checklist">
-            <li>✅ Zero upfront cost options available</li>
-            <li>✅ Federal tax credits up to 30%</li>
-            <li>✅ Installation by certified professionals</li>
-            <li>✅ Free energy savings estimate</li>
-          </ul>
-          <p><strong>Get Your Free Estimate</strong><br>Takes less than 1 minute</p>
+    <section class="px-4 sm:px-6 lg:px-8 py-8">
+      <div class="max-w-7xl mx-auto rounded-full bg-white shadow-soft border border-slate-200/60 px-5 py-4 flex flex-wrap gap-4 sm:gap-8 justify-center text-xs sm:text-sm uppercase tracking-[0.2em] text-slate-500 reveal-on-scroll">
+        <span>Quality and Innovation</span>
+        <span>Environmental Impact</span>
+        <span>Expert Guidance</span>
+        <span>Customized Solutions</span>
+        <span>Maximizing Your Investment</span>
+      </div>
+    </section>
+
+    <section id="about" class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-[.95fr_1.05fr] gap-8 lg:gap-12 items-center">
+        <div class="relative reveal-on-scroll">
+          <div class="rounded-[2rem] bg-white p-4 shadow-soft">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80" alt="Solar installation process" class="rounded-[1.5rem] w-full aspect-[4/5] object-cover" />
+          </div>
+          <div class="hidden sm:block absolute -bottom-8 -right-4 md:-right-8 w-2/5 rounded-[1.5rem] bg-white p-3 shadow-soft">
+            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80" alt="Solar landscape installation" class="rounded-[1.2rem] aspect-[4/5] object-cover w-full" />
+          </div>
         </div>
-        <div class="form-frame">
-          <iframe src="https://api.leadconnectorhq.com/widget/form/D6wmLjt5DtkLGMJwNPPP" title="Bright Future Solar estimate form"></iframe>
+        <div class="reveal-on-scroll">
+          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]">Why Choose Solar Energy with Bright Future?</span>
+          <h2 class="mt-5 font-display text-4xl sm:text-5xl text-slate-900">Reliable, high-quality solar solutions built for long-term value.</h2>
+          <p class="mt-5 text-base sm:text-lg text-slate-600">Our focus on sustainability, top-tier service, and tailored energy plans makes Bright Future a trusted partner in the transition to clean, renewable power.</p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
+              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+              <h3 class="mt-4 font-display text-2xl text-slate-900">Quality and Innovation</h3>
+              <p class="mt-2 text-sm text-slate-600">Cutting-edge solar technology and premium materials ensure efficient, long-lasting energy systems.</p>
+            </article>
+            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
+              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="leaf" class="w-5 h-5"></i></div>
+              <h3 class="mt-4 font-display text-2xl text-slate-900">Environmental Impact</h3>
+              <p class="mt-2 text-sm text-slate-600">Reduce your carbon footprint and contribute to a cleaner, greener planet through renewable power.</p>
+            </article>
+            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
+              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="compass" class="w-5 h-5"></i></div>
+              <h3 class="mt-4 font-display text-2xl text-slate-900">Expert Guidance</h3>
+              <p class="mt-2 text-sm text-slate-600">From consultation to installation, Bright Future provides clarity and confidence every step of the way.</p>
+            </article>
+            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
+              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="settings-2" class="w-5 h-5"></i></div>
+              <h3 class="mt-4 font-display text-2xl text-slate-900">Customized Solutions</h3>
+              <p class="mt-2 text-sm text-slate-600">Custom solar systems designed to maximize output, optimize savings, and support long-term performance.</p>
+            </article>
+          </div>
+          <div class="mt-4 rounded-[1.5rem] bg-ink p-6 text-white shadow-soft reveal-on-scroll">
+            <h3 class="font-display text-3xl text-white">Maximizing Your Solar Investment</h3>
+            <p class="mt-2 text-sm text-slate-300">Bright Future helps maximize your investment through tax credits, rebates, and financing options, making solar energy more affordable and rewarding.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section eco-services" id="services">
-      <div class="container eco-services-panel reveal fade-up">
-        <div class="section-heading centered-heading">
-          <span class="section-tag eco-tag">Our Solar Services</span>
-          <h2>Explore how Bright Future helps you save, add value, and go green.</h2>
-        </div>
-        <div class="eco-service-grid stagger-parent">
-          <article class="eco-service-card reveal fade-up stagger-item"><img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=80" alt="Reduce your costs with solar" /><div><h3>Reduce Your Costs</h3><p>Lower your electricity bill by generating your own energy with solar panels. Enjoy long-term savings, reduce reliance on traditional rates, and contribute to environmental conservation.</p><a href="#contact" class="btn btn-outline">Request a Quote</a></div></article>
-          <article class="eco-service-card reveal fade-up stagger-item"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Increase property value with solar" /><div><h3>Increase Property Value</h3><p>Solar panels enhance your home’s value by attracting buyers who prioritize sustainability and energy efficiency. Homes with solar systems often sell faster and at higher prices.</p><a href="#contact" class="btn btn-outline">Request a Quote</a></div></article>
-          <article class="eco-service-card reveal fade-up stagger-item"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Green energy renewable power" /><div><h3>Green Energy</h3><p>Solar energy is a clean, renewable source that reduces carbon emissions and dependency on fossil fuels. It helps protect the planet and promotes a sustainable future.</p><a href="#contact" class="btn btn-outline">Request a Quote</a></div></article>
-          <article class="eco-service-card reveal fade-up stagger-item"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Tax rebates and solar financing" /><div><h3>Take Advantage of Rebates</h3><p>Benefit from available tax credits and government rebates that lower installation costs. These incentives make clean energy more accessible and affordable.</p><a href="#contact" class="btn btn-outline">Request a Quote</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section eco-projects" id="projects">
-      <div class="container eco-project-wrapper reveal fade-up">
-        <div class="eco-project-grid">
-          <div class="eco-project-copy">
-            <span class="section-tag eco-tag">Coverage Area</span>
-            <h2>We proudly serve clients across multiple regions.</h2>
-            <p>Discover Bright Future’s energy-efficient solar solutions for a cleaner and more sustainable tomorrow, built around savings, performance, and accessibility.</p>
-            <div class="eco-feature-list">
-              <article><strong>Reduce Your Energy Costs</strong><p>Lower your electricity bills by generating your own renewable energy with high-efficiency solar panels.</p></article>
-              <article><strong>Increase Property Value</strong><p>Homes and businesses powered by solar energy are more attractive to buyers and future-focused owners.</p></article>
-              <article><strong>Go Green with Clean Energy</strong><p>Choose a 100% renewable energy source that reduces your carbon footprint and helps protect the environment.</p></article>
-              <article><strong>Take Advantage of Rebates</strong><p>Access tax credits and government incentives to reduce initial installation costs.</p></article>
+    <section id="lead-capture" class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto rounded-[2rem] bg-ink text-white shadow-soft overflow-hidden reveal-on-scroll">
+        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-0">
+          <div class="p-6 sm:p-8 lg:p-10 bg-[linear-gradient(180deg,#081015_0%,#0D2023_100%)]">
+            <span class="inline-flex rounded-full bg-brand/15 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]">Ready to Go Solar?</span>
+            <h2 class="mt-5 font-display text-4xl sm:text-5xl text-white">Take the first step with a custom solar plan.</h2>
+            <p class="mt-5 text-slate-300">You’ve seen the benefits. Our team will build a customized solar plan tailored to your home and budget.</p>
+            <ul class="mt-8 space-y-4 text-sm sm:text-base text-slate-200">
+              <li class="flex items-start gap-3"><span class="mt-1 text-brand"><i data-lucide="check-circle-2" class="w-5 h-5"></i></span><span>Zero upfront cost options available</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 text-brand"><i data-lucide="check-circle-2" class="w-5 h-5"></i></span><span>Federal tax credits up to 30%</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 text-brand"><i data-lucide="check-circle-2" class="w-5 h-5"></i></span><span>Installation by certified professionals</span></li>
+              <li class="flex items-start gap-3"><span class="mt-1 text-brand"><i data-lucide="check-circle-2" class="w-5 h-5"></i></span><span>Free energy savings estimate</span></li>
+            </ul>
+            <p class="mt-8 text-brand font-semibold">Get Your Free Estimate, takes less than 1 minute.</p>
+          </div>
+          <div class="bg-white p-3 sm:p-4 lg:p-5">
+            <div class="rounded-[1.5rem] overflow-hidden border border-slate-100 shadow-soft">
+              <iframe src="https://api.leadconnectorhq.com/widget/form/D6wmLjt5DtkLGMJwNPPP" title="Bright Future Solar estimate form" class="w-full min-h-[640px]"></iframe>
             </div>
           </div>
-          <div class="eco-gallery">
-            <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Solar energy services coverage" />
-            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Take control of your energy costs" />
-            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80" alt="Projects gallery bright future" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto reveal-on-scroll">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]">Our Solar Services</span>
+          <h2 class="mt-5 font-display text-4xl sm:text-5xl">Explore how Bright Future helps you save, add value, and go green.</h2>
+        </div>
+        <div class="mt-10 grid lg:grid-cols-2 gap-6">
+          <article class="rounded-[2rem] overflow-hidden bg-white shadow-soft border border-slate-100 reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=80" alt="Reduce your costs with solar" class="h-72 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-display text-3xl">Reduce Your Costs</h3>
+              <p class="mt-3 text-slate-600">Lower your electricity bill by generating your own energy with solar panels. Enjoy long-term savings and reduce reliance on traditional electricity rates.</p>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-2 text-brand font-semibold">Request a Quote <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="rounded-[2rem] overflow-hidden bg-white shadow-soft border border-slate-100 reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Increase property value with solar" class="h-72 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-display text-3xl">Increase Property Value</h3>
+              <p class="mt-3 text-slate-600">Solar panels enhance your home’s value by attracting buyers who prioritize sustainability and energy efficiency.</p>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-2 text-brand font-semibold">Request a Quote <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="rounded-[2rem] overflow-hidden bg-white shadow-soft border border-slate-100 reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Green energy renewable power" class="h-72 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-display text-3xl">Green Energy</h3>
+              <p class="mt-3 text-slate-600">Solar energy is a clean, renewable source that reduces carbon emissions and dependency on fossil fuels.</p>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-2 text-brand font-semibold">Request a Quote <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="rounded-[2rem] overflow-hidden bg-white shadow-soft border border-slate-100 reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Tax rebates and financing" class="h-72 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-display text-3xl">Take Advantage of Rebates</h3>
+              <p class="mt-3 text-slate-600">Benefit from available tax credits and government rebates that lower the cost of your solar installation.</p>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-2 text-brand font-semibold">Request a Quote <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-[.95fr_1.05fr] gap-8 lg:gap-12 items-center">
+        <div class="reveal-on-scroll">
+          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]">Coverage Area</span>
+          <h2 class="mt-5 font-display text-4xl sm:text-5xl">We proudly serve clients across multiple regions.</h2>
+          <p class="mt-5 text-slate-600">Discover Bright Future’s energy-efficient solar solutions for a cleaner and more sustainable tomorrow.</p>
+          <div class="mt-8 space-y-4">
+            <div class="rounded-[1.5rem] bg-white shadow-soft p-5 border border-slate-100"><h3 class="font-display text-2xl">Reduce Your Energy Costs</h3><p class="mt-2 text-sm text-slate-600">Lower your electricity bills by generating your own renewable energy with high-efficiency solar panels.</p></div>
+            <div class="rounded-[1.5rem] bg-white shadow-soft p-5 border border-slate-100"><h3 class="font-display text-2xl">Go Green with Clean Energy</h3><p class="mt-2 text-sm text-slate-600">Choose a 100% renewable energy source that reduces your carbon footprint and helps protect the environment.</p></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section testimonials" id="testimonials">
-      <div class="container eco-testimonial-wrapper reveal fade-up">
-        <div class="section-heading centered-heading">
-          <span class="section-tag eco-tag">Clients Testimonials</span>
-          <h2>What our clients are saying</h2>
-        </div>
-        <div class="eco-testimonial-grid stagger-parent">
-          <article class="eco-quote-card reveal fade-up stagger-item"><p>“Bright Future helped us reduce our bills and gave us confidence in every step of the installation process.”</p><strong>9.02KW Solar installation energy output</strong></article>
-          <article class="eco-quote-card reveal fade-up stagger-item"><p>“The team explained the savings, incentives, and timeline in a way that made switching to solar feel easy and smart.”</p><strong>13.035KW Solar installation energy output</strong></article>
-          <article class="eco-quote-card reveal fade-up stagger-item"><p>“Professional, sustainable, and worth it. Bright Future delivered the kind of energy solution we were hoping for.”</p><strong>Verified Bright Future Client</strong></article>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Solar project gallery" class="rounded-[1.8rem] shadow-soft sm:col-span-2 h-72 w-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Energy savings solar site" class="rounded-[1.8rem] shadow-soft h-56 w-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80" alt="Bright future solar rooftops" class="rounded-[1.8rem] shadow-soft h-56 w-full object-cover" />
         </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="container eco-contact-wrapper reveal fade-up">
-        <div class="eco-contact-shell">
-          <div class="eco-contact-copy">
-            <span class="section-tag eco-tag">Contact Us</span>
-            <h2>Request a Quote</h2>
-            <ul class="contact-list">
-              <li><span>📍</span>6275 West Plano Parkway, Suite 500 Plano, Texas, 75093</li>
-              <li><span>☎</span>+1 (866) 716-9209</li>
-              <li><span>✉</span>info@wearebrightfuture.com</li>
-              <li><span>◎</span>@wearebrightfuture</li>
+    <section id="testimonials" class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto reveal-on-scroll">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]">Clients Testimonials</span>
+          <h2 class="mt-5 font-display text-4xl sm:text-5xl">What our clients are saying</h2>
+        </div>
+        <div class="mt-10 grid lg:grid-cols-3 gap-6">
+          <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll"><div class="flex items-center gap-2 text-brand"><i data-lucide="quote" class="w-5 h-5"></i><i data-lucide="quote" class="w-5 h-5"></i></div><p class="mt-4 text-slate-600">Bright Future helped us reduce our bills and gave us confidence in every step of the installation process.</p><strong class="mt-5 block text-slate-900">9.02KW solar installation energy output</strong></article>
+          <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll"><div class="flex items-center gap-2 text-brand"><i data-lucide="quote" class="w-5 h-5"></i><i data-lucide="quote" class="w-5 h-5"></i></div><p class="mt-4 text-slate-600">The team explained the savings, incentives, and timeline in a way that made switching to solar feel easy and smart.</p><strong class="mt-5 block text-slate-900">13.035KW solar installation energy output</strong></article>
+          <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll"><div class="flex items-center gap-2 text-brand"><i data-lucide="quote" class="w-5 h-5"></i><i data-lucide="quote" class="w-5 h-5"></i></div><p class="mt-4 text-slate-600">Professional, sustainable, and worth it. Bright Future delivered the kind of energy solution we were hoping for.</p><strong class="mt-5 block text-slate-900">Verified Bright Future Client</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto rounded-[2rem] bg-ink text-white shadow-soft overflow-hidden reveal-on-scroll">
+        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-0">
+          <div class="p-6 sm:p-8 lg:p-10">
+            <span class="inline-flex rounded-full bg-brand/15 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]">Contact Us</span>
+            <h2 class="mt-5 font-display text-4xl sm:text-5xl text-white">Request a Quote</h2>
+            <ul class="mt-8 space-y-5 text-slate-200">
+              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="map-pin" class="w-5 h-5"></i></span><span>6275 West Plano Parkway, Suite 500 Plano, Texas, 75093</span></li>
+              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="phone-call" class="w-5 h-5"></i></span><span>+1 (866) 716-9209</span></li>
+              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="mail" class="w-5 h-5"></i></span><span>info@wearebrightfuture.com</span></li>
+              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="instagram" class="w-5 h-5"></i></span><span>@wearebrightfuture</span></li>
             </ul>
           </div>
-          <div class="form-frame">
-            <iframe src="https://api.leadconnectorhq.com/widget/form/D6wmLjt5DtkLGMJwNPPP" title="Bright Future Solar contact form"></iframe>
+          <div class="bg-white p-3 sm:p-4 lg:p-5">
+            <div class="rounded-[1.5rem] overflow-hidden border border-slate-100 shadow-soft">
+              <iframe src="https://api.leadconnectorhq.com/widget/form/D6wmLjt5DtkLGMJwNPPP" title="Bright Future Solar contact form" class="w-full min-h-[640px]"></iframe>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer eco-footer">
-    <div class="container footer-grid">
+  <footer class="bg-ink text-white mt-6 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-12 grid lg:grid-cols-3 gap-8">
       <div>
-        <a href="index.html" class="brand-mark eco-brand">Bright Future</a>
-        <p>Bright Future is a commercial brand of Bright Future Marketing LLC.</p>
-        <p>6275 West Plano Parkway, Suite 500 Plano, Texas, 75093</p>
-        <p>Phone: +1 (866) 716-9209</p>
-        <p>Email: info@wearebrightfuture.com</p>
+        <a href="index.html" class="text-sm font-extrabold uppercase tracking-[0.25em]">Bright Future</a>
+        <p class="mt-4 text-slate-300 text-sm">Bright Future is a commercial brand of Bright Future Marketing LLC.</p>
+        <p class="mt-2 text-slate-300 text-sm">6275 West Plano Parkway, Suite 500 Plano, Texas, 75093</p>
+        <p class="mt-2 text-slate-300 text-sm">Phone: +1 (866) 716-9209</p>
+        <p class="mt-2 text-slate-300 text-sm">Email: info@wearebrightfuture.com</p>
       </div>
       <div>
-        <h3>Useful Links</h3>
-        <a href="index.html">Home</a>
-        <a href="aboutUs.html">About Us</a>
-        <a href="#services">Services</a>
-        <a href="terms.html">Terms and Conditions</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <h3 class="font-display text-2xl">Useful Links</h3>
+        <div class="mt-4 space-y-2 text-slate-300 text-sm">
+          <a href="index.html" class="block">Home</a>
+          <a href="aboutUs.html" class="block">About Us</a>
+          <a href="#services" class="block">Services</a>
+          <a href="terms.html" class="block">Terms and Conditions</a>
+          <a href="privacy.html" class="block">Privacy Policy</a>
+        </div>
       </div>
       <div>
-        <h3>Credits</h3>
-        <p>2026 Bright Future Marketing LLC. All rights reserved.</p>
-        <p>Designed by EZ Marketing</p>
+        <h3 class="font-display text-2xl">Credits</h3>
+        <p class="mt-4 text-slate-300 text-sm">2026 Bright Future Marketing LLC. All rights reserved.</p>
+        <p class="mt-2 text-slate-300 text-sm">Designed by EZ Marketing</p>
       </div>
     </div>
-    <div class="container footer-bottom"><p>© 2026 Bright Future. All rights reserved.</p></div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>
