@@ -274,3 +274,95 @@ p { color: var(--muted); line-height: 1.8; font-size: clamp(1rem, 1.3vw, 1.06rem
   .contact-list li { font-size: 0.95rem; }
   .form-frame iframe { min-height: 22rem; }
 }
+
+@media (min-width: 577px) and (max-width: 900px) {
+  .eco-hero-inner-card {
+    max-width: 100%;
+    padding: 1.6rem;
+  }
+  .eco-hero-inner-card h1 {
+    max-width: 13ch;
+    line-height: 1;
+  }
+  .eco-hero-stats-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .eco-service-card div,
+  .eco-feature-list article,
+  .eco-quote-card,
+  .eco-contact-wrapper,
+  .eco-about-wrapper,
+  .eco-project-wrapper,
+  .eco-testimonial-wrapper,
+  .eco-services-panel {
+    padding: 1.25rem;
+  }
+  .partner-strip {
+    gap: 1rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-header {
+    position: sticky;
+  }
+  .navbar {
+    min-height: 4.6rem;
+    gap: 0.5rem;
+  }
+  .nav-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .nav-center {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+  .eco-hero-shell {
+    width: calc(100% - 0.75rem);
+  }
+  .eco-hero-frame,
+  .eco-about-wrapper,
+  .eco-project-wrapper,
+  .eco-testimonial-wrapper,
+  .eco-contact-wrapper,
+  .eco-services-panel,
+  .eco-form-shell {
+    border-radius: 1rem;
+  }
+  .eco-hero-inner-card {
+    border-radius: 0.9rem;
+    padding: 1rem;
+  }
+  .eco-hero-inner-card h1 {
+    max-width: 100%;
+    letter-spacing: -0.04em;
+  }
+  .hero-welcome,
+  .section-tag {
+    font-size: 0.76rem;
+  }
+  .eco-stat-box strong {
+    font-size: 2rem;
+  }
+  .eco-service-card img,
+  .about-main-image,
+  .about-floating-image,
+  .eco-gallery img {
+    border-radius: 0.9rem;
+  }
+  .eco-service-card div {
+    padding: 1rem;
+  }
+  .eco-feature-list article,
+  .eco-quote-card {
+    padding: 1rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    padding-bottom: 1.5rem;
+  }
+}
