@@ -12,18 +12,16 @@
         extend: {
           colors: {
             brand: '#DCA54A',
-            brandSoft: '#F5E8CE',
             ink: '#0A0F14',
-            soft: '#F7F3EA'
+            soft: '#F6F3EC'
           },
           fontFamily: {
-            display: ['Cormorant Garamond', 'serif'],
+            display: ['Outfit', 'sans-serif'],
             body: ['Outfit', 'sans-serif']
           },
           boxShadow: {
-            soft: '0 25px 60px rgba(15, 23, 42, 0.10)',
-            glow: '0 0 0 1px rgba(220,165,74,0.12), 0 20px 45px rgba(220,165,74,0.15)',
-            card: '0 18px 40px rgba(15,23,42,0.08)'
+            soft: '0 18px 45px rgba(15,23,42,0.08)',
+            glass: '0 0 0 1px rgba(255,255,255,0.08), 0 18px 45px rgba(15,23,42,0.18)'
           }
         }
       }
@@ -31,16 +29,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-soft text-slate-900 font-body overflow-x-hidden selection:bg-brand/30">
-  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(220,165,74,.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,.08),transparent_20%)]"></div>
-
   <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-    <div class="mx-auto max-w-[1600px] px-3 sm:px-5 lg:px-8 xl:px-10 py-4">
-      <div class="rounded-full border border-white/70 bg-white/85 backdrop-blur-xl shadow-soft px-5 py-3 flex items-center justify-between gap-4">
+    <div class="mx-auto max-w-[1700px] px-3 sm:px-5 lg:px-8 xl:px-10 py-4">
+      <div class="rounded-full border border-white/50 bg-white/80 backdrop-blur-xl shadow-soft px-5 py-3 flex items-center justify-between gap-4">
         <a href="index.html" class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em] text-ink">Bright Future</a>
         <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-600">
           <a href="#home" class="hover:text-ink transition" data-i18n="navHome">Home</a>
@@ -54,7 +50,7 @@
             <button class="lang-btn active rounded-full px-3 py-2" data-lang="en">English</button>
             <button class="lang-btn rounded-full px-3 py-2" data-lang="es">Español</button>
           </div>
-          <a href="#lead-capture" class="hidden sm:inline-flex items-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-ink shadow-glow hover:-translate-y-0.5 transition" data-i18n="navQuote">Request a Quote</a>
+          <a href="#lead-capture" class="hidden sm:inline-flex items-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-ink hover:-translate-y-0.5 transition" data-i18n="navQuote">Request a Quote</a>
           <button id="navToggle" class="lg:hidden inline-flex items-center justify-center rounded-full border border-slate-200 p-3 text-slate-700">
             <i data-lucide="menu" class="w-5 h-5"></i>
           </button>
@@ -75,39 +71,44 @@
     </div>
   </header>
 
-  <main class="pt-28" id="home">
-    <section class="px-3 sm:px-5 lg:px-8 xl:px-10">
-      <div class="max-w-[1600px] mx-auto rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-ink shadow-soft border border-white/10 reveal-on-scroll">
-        <div class="grid lg:grid-cols-2 items-center min-h-[820px]">
-          <div class="relative p-6 sm:p-8 lg:p-14 bg-[radial-gradient(circle_at_top_left,rgba(220,165,74,0.18),transparent_26%),linear-gradient(135deg,#081015_0%,#0A1720_48%,#0F242B_100%)]">
-            <div class="absolute inset-0 opacity-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
-            <div class="relative z-10 max-w-2xl">
-              <span class="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-brand"><span class="h-2 w-2 rounded-full bg-brand animate-pulse"></span> Renewable Energy Solutions</span>
-              <h1 class="mt-8 font-display text-white text-5xl sm:text-6xl lg:text-7xl leading-[0.92]" data-i18n="heroTitle">Brighten Your Home with Solar Energy</h1>
-              <p class="mt-6 max-w-xl text-base sm:text-lg text-slate-300" data-i18n="heroText">Sustainable power solutions by Bright Future, committed to clean energy and innovation. We help homeowners and businesses lower energy costs, increase property value, and move into a cleaner future.</p>
+  <main id="home" class="pt-28 pb-8">
+    <section class="px-3 sm:px-5 lg:px-8 xl:px-10 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] rounded-[2rem] overflow-hidden min-h-[760px] relative shadow-soft">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80" alt="Solar landscape" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[linear-gradient(120deg,rgba(10,15,20,0.82)_0%,rgba(10,15,20,0.42)_45%,rgba(10,15,20,0.15)_100%)]"></div>
+        <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-8 lg:p-10 text-white min-h-[760px]">
+          <div class="flex items-start justify-between gap-4">
+            <div class="rounded-full bg-white/10 backdrop-blur-md border border-white/15 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/90">Solar Future</div>
+            <div class="hidden lg:flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-md border border-white/15 px-4 py-2 text-xs text-white/80">
+              <span data-i18n="heroMiniLabel">Sustainable Power</span>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-8 items-end">
+            <div class="max-w-3xl">
+              <p class="text-xs uppercase tracking-[0.32em] text-white/70" data-i18n="welcome">Welcome to Bright Future</p>
+              <h1 class="mt-5 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] max-w-[11ch]" data-i18n="heroTitle">Brighten Your Home with Solar Energy</h1>
+              <p class="mt-6 max-w-2xl text-base sm:text-lg text-white/80" data-i18n="heroText">Sustainable power solutions by Bright Future, committed to clean energy and innovation. We help homeowners and businesses lower energy costs, increase property value, and move into a cleaner future.</p>
               <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                <a href="#lead-capture" class="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-ink hover:-translate-y-0.5 transition" data-i18n="heroCtaPrimary">Get Free Consultation</a>
-                <a href="#services" class="inline-flex items-center justify-center rounded-full border border-brand/50 px-6 py-3.5 text-sm font-semibold text-brand hover:bg-brand/10 transition" data-i18n="heroCtaSecondary">Explore Services</a>
-              </div>
-              <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-300">
-                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-3"><i data-lucide="badge-dollar-sign" class="w-4 h-4 text-brand"></i><span data-i18n="pill1">Lower utility bills</span></span>
-                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-3"><i data-lucide="leaf" class="w-4 h-4 text-brand"></i><span data-i18n="pill2">Clean renewable energy</span></span>
-                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-3"><i data-lucide="shield-check" class="w-4 h-4 text-brand"></i><span data-i18n="pill3">Trusted solar guidance</span></span>
+                <a href="#lead-capture" class="inline-flex items-center justify-center rounded-full bg-white text-ink px-6 py-3.5 text-sm font-semibold hover:-translate-y-0.5 transition" data-i18n="heroCtaPrimary">Get Free Consultation</a>
+                <a href="#services" class="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition" data-i18n="heroCtaSecondary">Explore Services</a>
               </div>
             </div>
-          </div>
-          <div class="relative h-full min-h-[420px] lg:min-h-[820px]">
-            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80" alt="Bright Future Solar installation" class="absolute inset-0 h-full w-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent"></div>
-            <div class="absolute top-6 right-6 rounded-full bg-white/90 px-5 py-3 text-sm font-semibold text-slate-800 shadow-card backdrop-blur-md" data-i18n="floatingBadge">Clean Energy. Smart Savings.</div>
-            <div class="absolute left-6 right-6 bottom-6 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-[1.6rem] border border-brand/30 bg-white/10 p-5 text-white shadow-soft backdrop-blur-md">
-                <p class="text-4xl font-extrabold">30%</p>
-                <p class="mt-2 text-sm text-slate-200" data-i18n="stat1">Federal Tax Credits</p>
+            <div class="grid gap-4 sm:max-w-md lg:ml-auto w-full">
+              <div class="rounded-[1.5rem] bg-white/10 backdrop-blur-xl border border-white/15 p-5 shadow-glass">
+                <p class="text-xs uppercase tracking-[0.28em] text-white/60" data-i18n="floatingBadge">Clean Energy. Smart Savings.</p>
+                <h2 class="mt-3 text-2xl font-semibold leading-tight" data-i18n="heroCardTitle">Premium solar planning with long-term value.</h2>
+                <p class="mt-3 text-sm text-white/75" data-i18n="heroCardText">Bright Future supports every step, from consultation and custom planning to installation, incentives, and energy savings.</p>
               </div>
-              <div class="rounded-[1.6rem] border border-brand/30 bg-white/10 p-5 text-white shadow-soft backdrop-blur-md">
-                <p class="text-4xl font-extrabold">1 Min</p>
-                <p class="mt-2 text-sm text-slate-200" data-i18n="stat2">Free Estimate Form</p>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="rounded-[1.5rem] bg-white text-ink p-5">
+                  <p class="text-4xl font-bold">30%</p>
+                  <p class="mt-2 text-sm text-slate-600" data-i18n="stat1">Federal Tax Credits</p>
+                </div>
+                <div class="rounded-[1.5rem] bg-white/12 backdrop-blur-xl border border-white/15 p-5">
+                  <p class="text-4xl font-bold">1 Min</p>
+                  <p class="mt-2 text-sm text-white/75" data-i18n="stat2">Free Estimate Form</p>
+                </div>
               </div>
             </div>
           </div>
@@ -115,179 +116,159 @@
       </div>
     </section>
 
-    <section class="px-3 sm:px-5 lg:px-8 xl:px-10 py-8">
-      <div class="max-w-[1600px] mx-auto rounded-full bg-white shadow-soft border border-slate-200/60 px-5 py-4 flex flex-wrap gap-4 sm:gap-8 justify-center text-xs sm:text-sm uppercase tracking-[0.2em] text-slate-500 reveal-on-scroll">
-        <span>Quality and Innovation</span>
-        <span>Environmental Impact</span>
-        <span>Expert Guidance</span>
-        <span>Customized Solutions</span>
-        <span>Maximizing Your Investment</span>
-      </div>
-    </section>
-
-    <section id="about" class="px-3 sm:px-5 lg:px-8 xl:px-10 py-10 lg:py-16">
-      <div class="max-w-[1600px] mx-auto grid lg:grid-cols-[.95fr_1.05fr] gap-8 lg:gap-12 items-center">
-        <div class="relative reveal-on-scroll">
-          <div class="rounded-[2rem] bg-white p-4 shadow-soft">
-            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80" alt="Solar installation process" class="rounded-[1.5rem] w-full aspect-[4/5] object-cover" />
-          </div>
-          <div class="hidden sm:block absolute -bottom-8 -right-4 md:-right-8 w-2/5 rounded-[1.5rem] bg-white p-3 shadow-soft">
-            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80" alt="Solar landscape installation" class="rounded-[1.2rem] aspect-[4/5] object-cover w-full" />
-          </div>
-        </div>
-        <div class="reveal-on-scroll">
-          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]" data-i18n="aboutTag">Why Choose Solar Energy with Bright Future?</span>
-          <h2 class="mt-5 font-display text-4xl sm:text-5xl text-slate-900" data-i18n="aboutTitle">Reliable, high-quality solar solutions built for long-term value.</h2>
-          <p class="mt-5 text-base sm:text-lg text-slate-600" data-i18n="aboutText">Our focus on sustainability, top-tier service, and tailored energy plans makes Bright Future a trusted partner in the transition to clean, renewable power.</p>
-          <div class="mt-8 grid sm:grid-cols-2 gap-4">
-            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
-              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
-              <h3 class="mt-4 font-display text-2xl text-slate-900" data-i18n="feature1Title">Quality and Innovation</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="feature1Text">Cutting-edge solar technology and premium materials ensure efficient, long-lasting energy systems.</p>
-            </article>
-            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
-              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="leaf" class="w-5 h-5"></i></div>
-              <h3 class="mt-4 font-display text-2xl text-slate-900" data-i18n="feature2Title">Environmental Impact</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="feature2Text">Reduce your carbon footprint and contribute to a cleaner, greener planet through renewable power.</p>
-            </article>
-            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
-              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="compass" class="w-5 h-5"></i></div>
-              <h3 class="mt-4 font-display text-2xl text-slate-900" data-i18n="feature3Title">Expert Guidance</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="feature3Text">From consultation to installation, Bright Future provides clarity and confidence every step of the way.</p>
-            </article>
-            <article class="rounded-[1.5rem] bg-white p-5 shadow-soft border border-slate-100 hover:-translate-y-1 transition reveal-on-scroll">
-              <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="settings-2" class="w-5 h-5"></i></div>
-              <h3 class="mt-4 font-display text-2xl text-slate-900" data-i18n="feature4Title">Customized Solutions</h3>
-              <p class="mt-2 text-sm text-slate-600" data-i18n="feature4Text">Custom solar systems designed to maximize output, optimize savings, and support long-term performance.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="px-3 sm:px-5 lg:px-8 xl:px-10 py-10 lg:py-16">
-      <div class="max-w-[1600px] mx-auto reveal-on-scroll">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-          <div class="max-w-3xl">
-            <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]" data-i18n="servicesTag">Our Solar Services</span>
-            <h2 class="mt-5 font-display text-4xl sm:text-5xl" data-i18n="servicesTitle">Impactful solar solutions designed to transform how you power your property.</h2>
-          </div>
-          <p class="max-w-xl text-slate-600" data-i18n="servicesText">From lower energy bills to stronger home value and cleaner energy, Bright Future turns solar into a practical long-term advantage.</p>
-        </div>
-        <div class="mt-10 grid lg:grid-cols-2 gap-6">
-          <article class="group relative rounded-[2rem] overflow-hidden min-h-[420px] shadow-soft reveal-on-scroll">
-            <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=80" alt="Reduce your costs with solar" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
-            <div class="relative z-10 h-full flex flex-col justify-end p-7 text-white">
-              <span class="inline-flex w-fit rounded-full bg-brand px-3 py-1 text-xs font-semibold text-ink">01</span>
-              <h3 class="mt-4 font-display text-4xl" data-i18n="service1Title">Reduce Your Costs</h3>
-              <p class="mt-3 max-w-lg text-slate-200" data-i18n="service1Text">Lower your electricity bill by generating your own energy with solar panels and enjoy long-term savings.</p>
-            </div>
-          </article>
-          <article class="grid gap-6">
-            <div class="group relative rounded-[2rem] overflow-hidden min-h-[197px] shadow-soft reveal-on-scroll">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Increase property value with solar" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-              <div class="relative z-10 h-full p-6 text-white flex flex-col justify-end">
-                <h3 class="font-display text-3xl" data-i18n="service2Title">Increase Property Value</h3>
-                <p class="mt-2 text-slate-200 text-sm" data-i18n="service2Text">Homes with solar systems often sell faster and at stronger prices.</p>
-              </div>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-6">
-              <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll">
-                <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="sun" class="w-5 h-5"></i></div>
-                <h3 class="mt-4 font-display text-3xl" data-i18n="service3Title">Green Energy</h3>
-                <p class="mt-3 text-slate-600 text-sm" data-i18n="service3Text">Choose a clean, renewable source that reduces carbon emissions and environmental impact.</p>
-              </article>
-              <article class="rounded-[2rem] bg-ink p-6 shadow-soft border border-white/10 text-white reveal-on-scroll">
-                <div class="w-12 h-12 rounded-2xl bg-brand/10 text-brand grid place-items-center"><i data-lucide="banknote" class="w-5 h-5"></i></div>
-                <h3 class="mt-4 font-display text-3xl" data-i18n="service4Title">Rebates & Incentives</h3>
-                <p class="mt-3 text-slate-300 text-sm" data-i18n="service4Text">Take advantage of tax credits and rebates that make your solar investment more affordable.</p>
-              </article>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="px-3 sm:px-5 lg:px-8 xl:px-10 py-10 lg:py-16">
-      <div class="max-w-[1600px] mx-auto grid lg:grid-cols-[.95fr_1.05fr] gap-8 lg:gap-12 items-center">
-        <div class="reveal-on-scroll">
-          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]" data-i18n="projectsTag">Coverage Area</span>
-          <h2 class="mt-5 font-display text-4xl sm:text-5xl" data-i18n="projectsTitle">We proudly serve clients across multiple regions.</h2>
-          <p class="mt-5 text-slate-600" data-i18n="projectsText">Discover Bright Future’s energy-efficient solar solutions for a cleaner and more sustainable tomorrow.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-on-scroll">
-          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Solar project gallery" class="rounded-[1.8rem] shadow-soft sm:col-span-2 h-72 w-full object-cover" />
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Energy savings solar site" class="rounded-[1.8rem] shadow-soft h-56 w-full object-cover" />
-          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80" alt="Bright future solar rooftops" class="rounded-[1.8rem] shadow-soft h-56 w-full object-cover" />
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="px-3 sm:px-5 lg:px-8 xl:px-10 py-10 lg:py-16">
-      <div class="max-w-[1600px] mx-auto reveal-on-scroll">
+    <section id="about" class="px-3 sm:px-5 lg:px-8 xl:px-10 pt-6 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] bg-white rounded-[2rem] p-5 sm:p-8 lg:p-10 shadow-soft">
         <div class="text-center max-w-3xl mx-auto">
-          <span class="inline-flex rounded-full bg-brand/10 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]" data-i18n="testimonialsTag">Clients Testimonials</span>
-          <h2 class="mt-5 font-display text-4xl sm:text-5xl" data-i18n="testimonialsTitle">What our clients are saying</h2>
+          <p class="text-xs uppercase tracking-[0.28em] text-slate-500" data-i18n="aboutTag">Why Choose Solar Energy with Bright Future?</p>
+          <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight" data-i18n="aboutTitle">Experience the future of solar power.</h2>
         </div>
-        <div class="mt-10 grid lg:grid-cols-3 gap-6">
-          <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll"><div class="flex items-center gap-2 text-brand"><i data-lucide="quote" class="w-5 h-5"></i><i data-lucide="quote" class="w-5 h-5"></i></div><p class="mt-4 text-slate-600" data-i18n="testimonial1">Bright Future helped us reduce our bills and gave us confidence in every step of the installation process.</p><strong class="mt-5 block text-slate-900">9.02KW solar installation energy output</strong></article>
-          <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll"><div class="flex items-center gap-2 text-brand"><i data-lucide="quote" class="w-5 h-5"></i><i data-lucide="quote" class="w-5 h-5"></i></div><p class="mt-4 text-slate-600" data-i18n="testimonial2">The team explained the savings, incentives, and timeline in a way that made switching to solar feel easy and smart.</p><strong class="mt-5 block text-slate-900">13.035KW solar installation energy output</strong></article>
-          <article class="rounded-[2rem] bg-white p-6 shadow-soft border border-slate-100 reveal-on-scroll"><div class="flex items-center gap-2 text-brand"><i data-lucide="quote" class="w-5 h-5"></i><i data-lucide="quote" class="w-5 h-5"></i></div><p class="mt-4 text-slate-600" data-i18n="testimonial3">Professional, sustainable, and worth it. Bright Future delivered the kind of energy solution we were hoping for.</p><strong class="mt-5 block text-slate-900">Verified Bright Future Client</strong></article>
+        <div class="mt-10 grid lg:grid-cols-[1.1fr_.9fr_.9fr] gap-5">
+          <article class="relative rounded-[1.75rem] overflow-hidden min-h-[360px] text-white">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Solar panel field" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="relative z-10 h-full flex flex-col justify-between p-6">
+              <div>
+                <p class="text-xs uppercase tracking-[0.26em] text-white/70">Bright Future</p>
+                <h3 class="mt-3 text-2xl font-semibold" data-i18n="feature1Title">Quality and Innovation</h3>
+              </div>
+              <div>
+                <p class="text-sm text-white/80" data-i18n="feature1Text">Cutting-edge solar technology and premium materials ensure efficient, long-lasting energy systems.</p>
+              </div>
+            </div>
+          </article>
+          <article class="rounded-[1.75rem] bg-soft p-6 flex flex-col justify-between min-h-[360px]">
+            <div class="w-12 h-12 rounded-2xl bg-brand/15 text-brand grid place-items-center"><i data-lucide="sun" class="w-5 h-5"></i></div>
+            <div>
+              <h3 class="text-2xl font-semibold" data-i18n="feature2Title">Solar Energy Best Production</h3>
+              <p class="mt-3 text-sm text-slate-600" data-i18n="feature2Text">Bright Future helps create optimized energy production with smart design, premium components, and expert guidance.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.75rem] bg-soft p-6 flex flex-col justify-between min-h-[360px]">
+            <div class="w-12 h-12 rounded-2xl bg-brand/15 text-brand grid place-items-center"><i data-lucide="building-2" class="w-5 h-5"></i></div>
+            <div>
+              <h3 class="text-2xl font-semibold" data-i18n="feature4Title">We Are Building Better Future</h3>
+              <p class="mt-3 text-sm text-slate-600" data-i18n="feature4Text">Our solutions reduce carbon footprint and increase long-term value through clean, renewable energy systems.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="px-3 sm:px-5 lg:px-8 xl:px-10 py-10 lg:py-16">
-      <div class="max-w-[1600px] mx-auto rounded-[2rem] bg-ink text-white shadow-soft overflow-hidden reveal-on-scroll">
-        <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-0">
-          <div class="p-6 sm:p-8 lg:p-10">
-            <span class="inline-flex rounded-full bg-brand/15 text-brand px-4 py-2 text-xs uppercase tracking-[0.28em]" data-i18n="contactTag">Contact Us</span>
-            <h2 class="mt-5 font-display text-4xl sm:text-5xl text-white" data-i18n="contactTitle">Request a Quote</h2>
-            <ul class="mt-8 space-y-5 text-slate-200">
-              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="map-pin" class="w-5 h-5"></i></span><span>6275 West Plano Parkway, Suite 500 Plano, Texas, 75093</span></li>
-              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="phone-call" class="w-5 h-5"></i></span><span>+1 (866) 716-9209</span></li>
-              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="mail" class="w-5 h-5"></i></span><span>info@wearebrightfuture.com</span></li>
-              <li class="flex items-start gap-3"><span class="text-brand mt-1"><i data-lucide="instagram" class="w-5 h-5"></i></span><span>@wearebrightfuture</span></li>
-            </ul>
+    <section id="services" class="px-3 sm:px-5 lg:px-8 xl:px-10 pt-6 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] grid lg:grid-cols-[.9fr_1.1fr] gap-5 items-stretch">
+        <div class="bg-white rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-soft flex flex-col justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.28em] text-slate-500" data-i18n="servicesTag">More Energy More Savings</p>
+            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight" data-i18n="servicesTitle">Energy savings made easy with the solar.</h2>
+            <p class="mt-5 text-slate-600" data-i18n="servicesText">Bright Future guides you through energy-efficient solar systems that reduce costs, simplify adoption, and maximize value.</p>
           </div>
-          <div class="bg-white p-3 sm:p-4 lg:p-5">
-            <div class="rounded-[1.5rem] overflow-hidden border border-slate-100 shadow-soft">
-              <iframe src="https://api.leadconnectorhq.com/widget/form/D6wmLjt5DtkLGMJwNPPP" title="Bright Future Solar contact form" class="w-full min-h-[640px]"></iframe>
+          <ul class="mt-8 space-y-4 text-sm text-slate-700">
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i><span data-i18n="service1Text">Lower energy bills with smart solar systems.</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i><span data-i18n="service2Text">Increase property value and long-term efficiency.</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i><span data-i18n="service4Text">Use incentives and rebates to reduce upfront cost.</span></li>
+          </ul>
+          <div class="mt-8">
+            <a href="#lead-capture" class="inline-flex items-center justify-center rounded-full bg-ink text-white px-6 py-3 text-sm font-semibold" data-i18n="heroCtaPrimary">Get Free Consultation</a>
+          </div>
+        </div>
+        <div class="relative rounded-[2rem] overflow-hidden min-h-[520px] shadow-soft">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Modern solar home" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-6 right-6 rounded-[1.5rem] bg-white/90 backdrop-blur-md p-5 shadow-soft min-w-[170px] text-right">
+            <p class="text-4xl font-bold text-slate-900">700</p>
+            <p class="mt-2 text-sm text-slate-600">Projects completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="px-3 sm:px-5 lg:px-8 xl:px-10 pt-6 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] bg-white rounded-[2rem] p-5 sm:p-8 lg:p-10 shadow-soft">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="text-xs uppercase tracking-[0.28em] text-slate-500" data-i18n="projectsTag">More Energy More Savings</p>
+          <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight" data-i18n="projectsTitle">Transform your home’s power into the future.</h2>
+        </div>
+        <div class="mt-10 grid md:grid-cols-3 gap-5">
+          <article class="relative rounded-[1.75rem] overflow-hidden min-h-[320px] text-white"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Wind and solar" /><div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div><div class="relative z-10 h-full flex items-end p-6"><div><h3 class="text-2xl font-semibold">The Mission Of Energy</h3><p class="mt-2 text-sm text-white/75">Sustainability and innovation working together.</p></div></div></article>
+          <article class="relative rounded-[1.75rem] overflow-hidden min-h-[320px] text-white"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Industrial solar" /><div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div><div class="relative z-10 h-full flex items-end p-6"><div><h3 class="text-2xl font-semibold">Serenity Of The Steppe</h3><p class="mt-2 text-sm text-white/75">Scalable clean energy for modern properties.</p></div></div></article>
+          <article class="relative rounded-[1.75rem] overflow-hidden min-h-[320px] text-white"><img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Energy landscape" /><div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div><div class="relative z-10 h-full flex items-end p-6"><div><h3 class="text-2xl font-semibold">Echoes Of The Past</h3><p class="mt-2 text-sm text-white/75">Clean energy solutions built for the future.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-3 sm:px-5 lg:px-8 xl:px-10 pt-6 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] rounded-[2rem] overflow-hidden min-h-[520px] relative shadow-soft">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80" alt="Sustainable future landscape" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,15,20,0.18)_0%,rgba(10,15,20,0.7)_100%)]"></div>
+        <div class="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8 lg:p-10 text-white min-h-[520px]">
+          <div class="text-center max-w-3xl mx-auto pt-8">
+            <p class="text-xs uppercase tracking-[0.28em] text-white/70">More Power Efficiency</p>
+            <h2 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.02]">Where sustainability meets style.</h2>
+          </div>
+          <div class="grid md:grid-cols-4 gap-4">
+            <article class="rounded-[1.3rem] bg-white/12 backdrop-blur-md border border-white/15 p-4"><h3 class="font-semibold">Explore The Future Of Solar Energy</h3><p class="mt-2 text-sm text-white/70">Modern systems, modern savings.</p></article>
+            <article class="rounded-[1.3rem] bg-white/12 backdrop-blur-md border border-white/15 p-4"><h3 class="font-semibold">Embrace The Future Of Solar Energy</h3><p class="mt-2 text-sm text-white/70">Designed for comfort and long-term performance.</p></article>
+            <article class="rounded-[1.3rem] bg-white/12 backdrop-blur-md border border-white/15 p-4"><h3 class="font-semibold">Clean Energy for a Lifetime Future</h3><p class="mt-2 text-sm text-white/70">Built around quality, efficiency, and value.</p></article>
+            <article class="rounded-[1.3rem] bg-white/12 backdrop-blur-md border border-white/15 p-4"><h3 class="font-semibold">Bright Future Solar</h3><p class="mt-2 text-sm text-white/70">Sustainable solutions for every property type.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="px-3 sm:px-5 lg:px-8 xl:px-10 pt-6 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] grid lg:grid-cols-[1.1fr_.9fr] gap-5">
+        <div class="bg-white rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-soft">
+          <p class="text-sm leading-7 text-slate-700">Renew Home is working with leading brands then making everything from thermostats to water, integrating new energy. Energy to savings made easy with the solar. At Bright Future, we make the move to renewable energy practical, elegant, and efficient.</p>
+          <div class="mt-8 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" class="w-12 h-12 rounded-full object-cover" alt="Client" />
+              <div>
+                <p class="font-semibold">Jho Jho</p>
+                <p class="text-sm text-slate-500">Business Owner</p>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-slate-100 grid place-items-center"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
+          </div>
+        </div>
+        <div class="relative rounded-[2rem] overflow-hidden min-h-[320px] shadow-soft">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Luxury solar home" class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <section id="lead-capture" class="px-3 sm:px-5 lg:px-8 xl:px-10 pt-6 reveal-on-scroll">
+      <div class="mx-auto max-w-[1700px] rounded-[2rem] overflow-hidden relative shadow-soft bg-ink text-white">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80" alt="Newsletter background" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,15,20,0.65)_0%,rgba(10,15,20,0.9)_100%)]"></div>
+        <div class="relative z-10 p-6 sm:p-8 lg:p-10 grid lg:grid-cols-[.9fr_1.1fr] gap-8 items-start">
+          <div>
+            <h2 class="text-4xl sm:text-5xl font-semibold">Newsletter</h2>
+            <p class="mt-5 text-white/75 max-w-md">Subscribe to receive updates on solar trends, savings, financing, and new opportunities with Bright Future.</p>
+            <div class="mt-6 flex gap-3 text-white/70">
+              <a href="#" class="w-10 h-10 rounded-full border border-white/15 grid place-items-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/15 grid place-items-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/15 grid place-items-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="grid gap-5">
+            <div class="rounded-[1.5rem] bg-white/10 backdrop-blur-xl border border-white/15 p-4 sm:p-5">
+              <label class="text-xs uppercase tracking-[0.28em] text-white/60">Subscribe to newsletter</label>
+              <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Enter your email" class="flex-1 rounded-full bg-white text-slate-900 px-5 py-3 outline-none" />
+                <button class="rounded-full bg-brand text-ink px-6 py-3 font-semibold">Subscribe</button>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-4 gap-4 text-sm text-white/75">
+              <div><p class="font-semibold text-white mb-2">Menu</p><p>Home</p><p>About</p><p>Services</p></div>
+              <div><p class="font-semibold text-white mb-2">Quick Links</p><p>Projects</p><p>Contact</p><p>Quote</p></div>
+              <div><p class="font-semibold text-white mb-2">Address</p><p>Texas</p><p>United States</p></div>
+              <div><p class="font-semibold text-white mb-2">Discover</p><p>Solar</p><p>Energy</p><p>Future</p></div>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="bg-ink text-white mt-6 px-3 sm:px-5 lg:px-8 xl:px-10">
-    <div class="max-w-[1600px] mx-auto py-12 grid lg:grid-cols-3 gap-8">
-      <div>
-        <a href="index.html" class="text-sm font-extrabold uppercase tracking-[0.25em]">Bright Future</a>
-        <p class="mt-4 text-slate-300 text-sm">Bright Future is a commercial brand of Bright Future Marketing LLC.</p>
-        <p class="mt-2 text-slate-300 text-sm">6275 West Plano Parkway, Suite 500 Plano, Texas, 75093</p>
-        <p class="mt-2 text-slate-300 text-sm">Phone: +1 (866) 716-9209</p>
-        <p class="mt-2 text-slate-300 text-sm">Email: info@wearebrightfuture.com</p>
-      </div>
-      <div>
-        <h3 class="font-display text-2xl" data-i18n="footerLinksTitle">Useful Links</h3>
-        <div class="mt-4 space-y-2 text-slate-300 text-sm">
-          <a href="index.html" class="block" data-i18n="navHome">Home</a>
-          <a href="aboutUs.html" class="block" data-i18n="footerAbout">About Us</a>
-          <a href="#services" class="block" data-i18n="navServices">Services</a>
-          <a href="terms.html" class="block" data-i18n="footerTerms">Terms and Conditions</a>
-          <a href="privacy.html" class="block" data-i18n="footerPrivacy">Privacy Policy</a>
-        </div>
-      </div>
-      <div>
-        <h3 class="font-display text-2xl" data-i18n="footerCredits">Credits</h3>
-        <p class="mt-4 text-slate-300 text-sm">2026 Bright Future Marketing LLC. All rights reserved.</p>
-        <p class="mt-2 text-slate-300 text-sm"><span data-i18n="footerDesigned">Designed by EZ Marketing</span></p>
-      </div>
-    </div>
-  </footer>
 
   <script src="site.js"></script>
 </body>
