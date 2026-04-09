@@ -148,3 +148,129 @@ p { color: var(--muted); line-height: 1.8; font-size: clamp(1rem, 1.3vw, 1.06rem
   .eco-gallery { grid-template-columns: 1fr; }
   .eco-gallery img:first-child { grid-column: auto; }
 }
+
+@media (max-width: 1200px) {
+  .eco-hero-shell { width: min(calc(100% - 2rem), 100%); }
+  .eco-hero-frame { padding: 3.5rem 2rem 7rem; }
+  .eco-hero-inner-card h1 { max-width: 12ch; }
+}
+
+@media (max-width: 992px) {
+  .navbar { grid-template-columns: 1fr auto auto; }
+  .nav-toggle { display: block; }
+  .nav-center {
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+  .nav-center.open { display: flex; }
+  .eco-cta { display: none; }
+  .eco-hero-frame {
+    min-height: auto;
+    padding: 3rem 1.5rem 7rem;
+  }
+  .eco-hero-panel { max-width: 100%; }
+  .eco-hero-inner-card h1 { font-size: clamp(2.8rem, 7vw, 4.4rem); }
+  .eco-hero-stats-row {
+    position: static;
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+  .eco-about-grid,
+  .eco-project-grid,
+  .eco-contact-shell,
+  .eco-form-shell,
+  .footer-grid,
+  .eco-service-grid,
+  .eco-testimonial-grid,
+  .eco-feature-list {
+    grid-template-columns: 1fr;
+  }
+  .eco-about-images { min-height: auto; }
+  .about-main-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .about-floating-image {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+    border: 0;
+  }
+  .eco-gallery { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .container { width: min(calc(100% - 2rem), var(--container)); }
+  .section { padding: 3.5rem 0; }
+  .eco-logo-badge {
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+  }
+  .eco-hero-frame {
+    border-radius: 1.5rem;
+    padding: 2rem 1rem 2rem;
+  }
+  .eco-hero-inner-card {
+    padding: 1.25rem;
+  }
+  .hero-actions,
+  .hero-actions-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .btn {
+    width: 100%;
+  }
+  .eco-stat-box {
+    border-width: 3px;
+    padding: 1.1rem;
+  }
+  .partner-strip {
+    border-radius: 1.25rem;
+    justify-content: flex-start;
+    padding: 1rem;
+  }
+  .eco-services-panel,
+  .eco-about-wrapper,
+  .eco-project-wrapper,
+  .eco-testimonial-wrapper,
+  .eco-contact-wrapper,
+  .eco-form-shell {
+    padding: 1rem;
+    border-radius: 1.4rem;
+  }
+  .form-frame iframe {
+    min-height: 26rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+  h2 { font-size: clamp(2rem, 7vw, 2.6rem); }
+  .brand-mark { font-size: 0.82rem; }
+  .eco-hero-shell,
+  .container { width: min(calc(100% - 1rem), var(--container)); }
+  .section { padding: 3rem 0; }
+  .eco-hero-frame { padding: 1rem; }
+  .eco-hero-inner-card h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .eco-hero-inner-card p,
+  p { font-size: 0.96rem; }
+  .eco-hero-stats-row { grid-template-columns: 1fr; gap: 0.75rem; }
+  .eco-gallery { grid-template-columns: 1fr; }
+  .eco-gallery img:first-child { grid-column: auto; }
+  .footer-grid { gap: 1rem; }
+  .contact-list li { font-size: 0.95rem; }
+  .form-frame iframe { min-height: 22rem; }
+}
