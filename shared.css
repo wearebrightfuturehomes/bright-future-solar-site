@@ -1,15 +1,15 @@
 :root {
   --bg: #f5f4ef;
   --surface: #ffffff;
-  --surface-soft: #eef2e7;
+  --surface-soft: #f7f1e4;
   --dark: #071012;
   --dark-2: #0b1b1d;
   --teal: #103538;
   --text: #182028;
   --muted: #6d7686;
   --line: rgba(16, 24, 32, 0.08);
-  --green: #d7ff57;
-  --green-deep: #c3ef2d;
+  --green: #DCA54A;
+  --green-deep: #E0B86A;
   --gold: #DCA54A;
   --gold-soft: rgba(220,165,74,0.18);
   --radius: 1.5rem;
@@ -39,11 +39,11 @@ p { color: var(--muted); line-height: 1.8; font-size: clamp(1rem, 1.3vw, 1.06rem
 .nav-toggle { display: none; background: transparent; border: 0; width: 3rem; height: 3rem; padding: 0; }
 .nav-toggle span { display: block; width: 1.5rem; height: 2px; background: var(--text); margin: 0.32rem auto; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.25rem; padding: 0.9rem 1.4rem; border-radius: 999px; border: 1px solid transparent; transition: 0.35s ease; font-weight: 600; }
-.btn-primary { background: var(--green); color: #121212; }
-.btn-primary:hover { background: var(--green-deep); transform: translateY(-2px); }
+.btn-primary { background: #DCA54A; color: #121212; }
+.btn-primary:hover { background: #E0B86A; transform: translateY(-2px); }
 .btn-outline { border-color: rgba(16,24,32,0.14); background: #fff; }
 .btn-outline:hover { border-color: var(--text); }
-.section-tag { display: inline-flex; align-items: center; padding: 0.52rem 0.85rem; border-radius: 999px; background: #eff7d6; color: #667340; font-size: 0.84rem; font-weight: 600; }
+.section-tag { display: inline-flex; align-items: center; padding: 0.52rem 0.85rem; border-radius: 999px; background: #f4ead2; color: #8b6a2a; font-size: 0.84rem; font-weight: 600; }
 .centered-heading { text-align: center; }
 .eco-hero-shell { width: min(calc(100% - 2rem), 1440px); }
 .eco-topnav-visual { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; margin-bottom: 1rem; }
@@ -76,7 +76,7 @@ p { color: var(--muted); line-height: 1.8; font-size: clamp(1rem, 1.3vw, 1.06rem
 .about-main-image { width: 78%; height: 100%; }
 .about-floating-image { width: 44%; position: absolute; right: 0; bottom: 2rem; border: 8px solid #fff; box-shadow: var(--shadow); }
 .eco-feature-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-.eco-feature-list article, .eco-quote-card { background: #f8faf5; border: 1px solid rgba(16,24,32,0.06); border-radius: 1.15rem; padding: 1.2rem; }
+.eco-feature-list article, .eco-quote-card { background: #fbf7ef; border: 1px solid rgba(16,24,32,0.06); border-radius: 1.15rem; padding: 1.2rem; }
 .eco-feature-list strong { display: block; margin-bottom: 0.45rem; }
 .section-heading { margin-bottom: 2rem; }
 .eco-services-panel { background: linear-gradient(180deg, #091214, #0d2325); border-radius: var(--radius-lg); padding: 2rem; color: #fff; box-shadow: var(--shadow); }
