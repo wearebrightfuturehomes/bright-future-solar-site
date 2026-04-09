@@ -12,6 +12,7 @@
         extend: {
           colors: {
             brand: '#DCA54A',
+            brandSoft: '#F5E8CE',
             ink: '#0A0F14',
             panel: '#101820',
             soft: '#F7F3EA',
@@ -22,17 +23,9 @@
             body: ['Outfit', 'sans-serif']
           },
           boxShadow: {
-            soft: '0 25px 60px rgba(15, 23, 42, 0.12)',
-            glow: '0 0 0 1px rgba(220,165,74,0.15), 0 20px 45px rgba(220,165,74,0.14)'
-          },
-          keyframes: {
-            floaty: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-10px)' } },
-            fadeUp: { '0%': { opacity: '0', transform: 'translateY(32px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-            pulseSoft: { '0%,100%': { opacity: '1' }, '50%': { opacity: '.6' } }
-          },
-          animation: {
-            floaty: 'floaty 5s ease-in-out infinite',
-            pulseSoft: 'pulseSoft 2.2s ease-in-out infinite'
+            soft: '0 25px 60px rgba(15, 23, 42, 0.10)',
+            glow: '0 0 0 1px rgba(220,165,74,0.12), 0 20px 45px rgba(220,165,74,0.15)',
+            card: '0 18px 40px rgba(15,23,42,0.08)'
           }
         }
       }
@@ -44,12 +37,14 @@
   <link rel="stylesheet" href="shared.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-soft text-slate-900 font-body overflow-x-hidden">
+<body class="bg-soft text-slate-900 font-body overflow-x-hidden selection:bg-brand/30">
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(220,165,74,.18),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,.08),transparent_20%)]"></div>
+
   <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-      <div class="rounded-full border border-white/50 bg-white/80 backdrop-blur-xl shadow-soft px-5 py-3 flex items-center justify-between gap-4">
-        <a href="index.html" class="text-sm sm:text-base font-extrabold uppercase tracking-[0.25em] text-ink">Bright Future</a>
-        <nav id="desktopNav" class="hidden lg:flex items-center gap-8 text-sm text-slate-600">
+      <div class="rounded-full border border-white/70 bg-white/85 backdrop-blur-xl shadow-soft px-5 py-3 flex items-center justify-between gap-4">
+        <a href="index.html" class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em] text-ink">Bright Future</a>
+        <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-600">
           <a href="#home" class="hover:text-ink transition">Home</a>
           <a href="#about" class="hover:text-ink transition">About</a>
           <a href="#services" class="hover:text-ink transition">Services</a>
@@ -63,7 +58,7 @@
           </button>
         </div>
       </div>
-      <div id="mobileNav" class="hidden lg:hidden mt-3 rounded-3xl border border-white/60 bg-white/90 backdrop-blur-xl shadow-soft p-4 space-y-3 text-sm text-slate-700">
+      <div id="mobileNav" class="hidden lg:hidden mt-3 rounded-3xl border border-white/60 bg-white/95 backdrop-blur-xl shadow-soft p-4 space-y-3 text-sm text-slate-700">
         <a href="#home" class="block">Home</a>
         <a href="#about" class="block">About</a>
         <a href="#services" class="block">Services</a>
@@ -75,25 +70,29 @@
   </header>
 
   <main class="pt-28" id="home">
-    <section class="relative px-4 sm:px-6 lg:px-8">
-      <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(220,165,74,.18),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,.08),transparent_24%)]"></div>
-      <div class="max-w-7xl mx-auto rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-ink shadow-soft border border-white/10">
-        <div class="grid lg:grid-cols-[1.1fr_.9fr] min-h-[780px]">
+    <section class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-ink shadow-soft border border-white/10 reveal-on-scroll">
+        <div class="grid lg:grid-cols-[1.08fr_.92fr] min-h-[780px]">
           <div class="relative p-6 sm:p-8 lg:p-12 flex flex-col justify-between bg-[linear-gradient(135deg,#081015_0%,#0B1820_50%,#0E242A_100%)]">
             <div class="absolute inset-0 opacity-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
-            <div class="relative z-10">
-              <span class="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-brand"><span class="h-2 w-2 rounded-full bg-brand animate-pulseSoft"></span> Renewable Energy Solutions</span>
-              <div class="mt-10 max-w-3xl rounded-[1.75rem] border border-brand/40 bg-black/10 p-6 sm:p-8 lg:p-10 shadow-glow">
+            <div class="relative z-10 max-w-3xl">
+              <span class="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-brand"><span class="h-2 w-2 rounded-full bg-brand animate-pulse"></span> Renewable Energy Solutions</span>
+              <div class="mt-10 rounded-[1.75rem] border border-brand/40 bg-black/10 p-6 sm:p-8 lg:p-10 shadow-glow">
                 <p class="text-sm uppercase tracking-[0.3em] text-brand/80 mb-4">Welcome to Bright Future</p>
-                <h1 class="font-display text-white text-5xl sm:text-6xl lg:text-7xl leading-[0.92]">Brighten Your Home with Solar Energy</h1>
+                <h1 class="font-display text-white text-5xl sm:text-6xl lg:text-7xl leading-[0.92] max-w-[11ch]">Brighten Your Home with Solar Energy</h1>
                 <p class="mt-6 max-w-2xl text-base sm:text-lg text-slate-300">Sustainable power solutions by Bright Future, committed to clean energy and innovation. We help homeowners and businesses lower energy costs, increase property value, and move into a cleaner future.</p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4">
                   <a href="#lead-capture" class="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-ink hover:-translate-y-0.5 transition">Get Free Consultation</a>
                   <a href="#services" class="inline-flex items-center justify-center rounded-full border border-brand/50 px-6 py-3.5 text-sm font-semibold text-brand hover:bg-brand/10 transition">Explore Services</a>
                 </div>
               </div>
+              <div class="mt-6 flex flex-wrap gap-3 text-xs sm:text-sm text-slate-300">
+                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2"><i data-lucide="badge-dollar-sign" class="w-4 h-4 text-brand"></i> Lower utility bills</span>
+                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2"><i data-lucide="leaf" class="w-4 h-4 text-brand"></i> Clean renewable energy</span>
+                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand"></i> Trusted solar guidance</span>
+              </div>
             </div>
-            <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:mt-0 lg:max-w-xl lg:ml-auto w-full">
+            <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 lg:max-w-xl lg:ml-auto w-full">
               <div class="rounded-[1.5rem] border-4 border-white bg-teal-900/90 p-5 text-white shadow-soft">
                 <p class="text-4xl font-extrabold">30%</p>
                 <p class="mt-2 text-sm text-slate-200">Federal Tax Credits</p>
@@ -106,13 +105,14 @@
           </div>
           <div class="relative min-h-[420px] lg:min-h-full">
             <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80" alt="Bright Future Solar installation" class="absolute inset-0 h-full w-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
-            <div class="absolute bottom-6 left-6 right-6 rounded-[1.5rem] bg-white/90 backdrop-blur-md p-5 shadow-soft animate-floaty">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent"></div>
+            <div class="absolute top-6 right-6 rounded-full bg-white/90 px-5 py-3 text-sm font-semibold text-slate-800 shadow-card backdrop-blur-md">Clean Energy. Smart Savings.</div>
+            <div class="absolute bottom-6 left-6 right-6 rounded-[1.5rem] bg-white/92 backdrop-blur-md p-5 shadow-soft">
               <div class="flex items-start gap-4">
                 <div class="rounded-2xl bg-brand/15 p-3 text-brand"><i data-lucide="sun-medium" class="w-6 h-6"></i></div>
                 <div>
-                  <h2 class="font-display text-2xl text-slate-900">Clean energy. Lower bills. Smarter future.</h2>
-                  <p class="mt-2 text-sm text-slate-600">Premium solar planning, expert installation, and financing guidance designed to maximize your long-term savings.</p>
+                  <h2 class="font-display text-2xl text-slate-900">Premium solar planning with long-term value.</h2>
+                  <p class="mt-2 text-sm text-slate-600">Bright Future supports every step, from consultation and custom planning to installation, incentives, and energy savings.</p>
                 </div>
               </div>
             </div>
@@ -251,6 +251,7 @@
           <div class="mt-8 space-y-4">
             <div class="rounded-[1.5rem] bg-white shadow-soft p-5 border border-slate-100"><h3 class="font-display text-2xl">Reduce Your Energy Costs</h3><p class="mt-2 text-sm text-slate-600">Lower your electricity bills by generating your own renewable energy with high-efficiency solar panels.</p></div>
             <div class="rounded-[1.5rem] bg-white shadow-soft p-5 border border-slate-100"><h3 class="font-display text-2xl">Go Green with Clean Energy</h3><p class="mt-2 text-sm text-slate-600">Choose a 100% renewable energy source that reduces your carbon footprint and helps protect the environment.</p></div>
+            <div class="rounded-[1.5rem] bg-white shadow-soft p-5 border border-slate-100"><h3 class="font-display text-2xl">Take Advantage of Rebates</h3><p class="mt-2 text-sm text-slate-600">Access tax credits and government incentives to reduce initial solar installation costs.</p></div>
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-on-scroll">
