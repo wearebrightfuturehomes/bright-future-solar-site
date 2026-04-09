@@ -154,7 +154,7 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 18);
 });
 
-const revealElements = document.querySelectorAll('.reveal-on-scroll');
+const animatedElements = document.querySelectorAll('.reveal-on-scroll, .slide-left, .slide-right, .zoom-in');
 if (window.innerWidth > 768) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -163,10 +163,13 @@ if (window.innerWidth > 768) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.14 });
-  revealElements.forEach((el) => observer.observe(el));
+  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+  animatedElements.forEach((el) => observer.observe(el));
+  setTimeout(() => {
+    animatedElements.forEach((el) => el.classList.add('visible'));
+  }, 1200);
 } else {
-  revealElements.forEach((el) => el.classList.add('visible'));
+  animatedElements.forEach((el) => el.classList.add('visible'));
 }
 
 langButtons.forEach((btn) => {
