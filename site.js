@@ -52,7 +52,21 @@ const translations = {
     testimonial2: 'The team explained the savings, incentives, and timeline in a way that made switching to solar feel easy and smart.',
     testimonial3: 'Professional, sustainable, and worth it. Bright Future delivered the kind of energy solution we were hoping for.',
     contactTag: 'Contact Us',
-    contactTitle: 'Request a Quote'
+    contactTitle: 'Request a Quote',
+    navHome: 'Home',
+    navAbout: 'About',
+    navServices: 'Services',
+    navProjects: 'Projects',
+    navContact: 'Contact',
+    navQuote: 'Request a Quote',
+    footerLinksTitle: 'Useful Links',
+    footerHome: 'Home',
+    footerAbout: 'About Us',
+    footerServices: 'Services',
+    footerTerms: 'Terms and Conditions',
+    footerPrivacy: 'Privacy Policy',
+    footerCredits: 'Credits',
+    footerDesigned: 'Designed by EZ Marketing'
   },
   es: {
     welcome: 'Bienvenido a Bright Future',
@@ -102,7 +116,21 @@ const translations = {
     testimonial2: 'El equipo explicó el ahorro, los incentivos y el proceso de una forma clara y fácil.',
     testimonial3: 'Profesional, sostenible y totalmente valioso. Bright Future entregó la solución energética que esperábamos.',
     contactTag: 'Contáctanos',
-    contactTitle: 'Solicita una cotización'
+    contactTitle: 'Solicita una cotización',
+    navHome: 'Inicio',
+    navAbout: 'Nosotros',
+    navServices: 'Servicios',
+    navProjects: 'Proyectos',
+    navContact: 'Contacto',
+    navQuote: 'Solicitar cotización',
+    footerLinksTitle: 'Enlaces útiles',
+    footerHome: 'Inicio',
+    footerAbout: 'Sobre nosotros',
+    footerServices: 'Servicios',
+    footerTerms: 'Términos y condiciones',
+    footerPrivacy: 'Política de privacidad',
+    footerCredits: 'Créditos',
+    footerDesigned: 'Diseñado por EZ Marketing'
   }
 };
 
